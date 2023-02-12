@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/bank.png">
+    <title>Bank- Login form</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-6xl text-center mt-7 font-semibold text-green-700">Welcome to <span
+                class="font-bold text-violet-600">My Baap-Er-Bank</span><span class="text-red-500"> !!!</span></h1>
+    </header>
+    <main>
+        <section class="bg-sky-700 w-4/5 mx-auto mt-10  py-10  px-20 rounded-3xl">
+            <h2 class="text-4xl font-bold capitalize text-white mb-10">please Login</h2>
+            <div>
+                <h5 class="my-2 text-xl font-semibold text-slate-200 pl-3"><label for="user-email"> Email</label></h5>
+                <input id="user-email" class="w-2/3 text-xl py-2 block mb-4 rounded-full px-5" type="email"
+                    placeholder="Please write your email">
+                <h5 class="my-2 text-xl font-semibold text-slate-200 px-3"><label for="user-password"> Password</label></h5>
+                <input id="user-password" class="w-2/3 text-xl block py-2 rounded-full px-5" type="password"
+                    placeholder="Please write your Password ">
+                <input type="submit" id="sumbit-btn"
+                    class="py-2 px-7 bg-white font-semibold text-lg my-7 rounded-full transition ease-out delay-350 hover:scale-110 hover:bg-yellow-400 duration-100 cursor-pointer active:bg-lime-600 active:text-white active:border-solid active:border-2 active:border-white border-transparent border-2">
+            </div>
+        </section>
+    </main>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
