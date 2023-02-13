@@ -1,53 +1,71 @@
-// step- 1 : Deposit button ke catch kora...
+// ------------------------------------ Deposit korar code ---------------------------------//
+
+// step-1: প্রথমে Deposit এর বাটন কে ধরা...
 document.getElementById('Deposit-btn').addEventListener('click', function () {
-    // step- 2: Tarpor user er deposit amonunt er button er shonjog.. 
-    const depositAmount = document.getElementById('user-Deposit');
-    const newDepositString = depositAmount.value;
-    // step-3 : input krito shonkha ke number a porinoto kora..
-    const newDeposit = parseFloat(newDepositString);
-    // button click er por input field ke khali korano..
-    depositAmount.value = '';
-
-    const depositAdd = document.getElementById('depositAdd');
-    const preciousDepositString = depositAdd.innerText;
-    const preciousDeposit = parseFloat(preciousDepositString)
-
-    const totalAmount = newDeposit + preciousDeposit;
-    depositAdd.innerText = totalAmount;
-
-    const balanceAdd = document.getElementById('balanceAdd');
-    const newBalancestring = balanceAdd.innerText;
-    const newBalance = parseFloat(newBalancestring);
-
-    const totalBalance = newBalance + newDeposit;
-    balanceAdd.innerText = totalBalance;
-
-})
-// Withdraw part is start
-
-document.getElementById('Withdraw-btn').addEventListener('click', function () {
-    const userWithdraw = document.getElementById('user-Withdraw');
-    const newWithdrawString = userWithdraw.value;
-    const newWithdraw = parseFloat(newWithdrawString)
-    userWithdraw.value = '';
-
-    const withdrawAdd = document.getElementById('withdrawAdd');
-    const previousWithdrawString = withdrawAdd.innerText;
-    const previousWithdraw = parseFloat(previousWithdrawString);
-
-    const balanceAdd = document.getElementById('balanceAdd');
-    const newBalancestring = balanceAdd.innerText;
-    const newBalance = parseFloat(newBalancestring);
-    
-    if (newWithdraw > newBalance) {
-        alert('Sorry তোমার বাবার  একাউন্ট এ এতো টাকা নাই। বাবা কে বলো টাকা deposit করতে। ')
+    // step-2: Deposit এর ইনপুট ফিল্ড কে ধরা..
+    const userDeposit = document.getElementById('user-Deposit');
+    const userDepositString = userDeposit.value;
+    // step-3: Deposit এর ইনপুট স্ট্রিং কে নম্বর এ কনভার্ট করা.
+    const userDepositNumber = parseFloat(userDepositString)
+    // ক্লিক করার পর যাতে ইনপুট ফিল্ড খালি হয়ে যায়, সেই জন্য খালি স্ট্রিং রাখা.
+    userDeposit.value = '';
+    if(isNaN(userDepositNumber)){
+        alert('Number বা সংখ্যা ছাড়া কোনো কিছু Allow না।  Please provide a valid Number ')
         return;
     }
 
-    const totalAmount = newWithdraw + previousWithdraw;
-    withdrawAdd.innerText = totalAmount;
+    // step-4: ব্যাংক এর Deposit কে ধরা তারপর তাকে স্ট্রিং থেকে নম্বর এ কনভার্ট করা.
+    const depositAdd = document.getElementById('depositAdd');
+    const depositAddstring = depositAdd.innerText;
+    const depositAddNumber = parseFloat(depositAddstring)
 
-    const totalBalance = newBalance - newWithdraw;
-    balanceAdd.innerText = totalBalance;
+    // step-5:ইউসার এর দেয়া ইনপুট কে ব্যাংক এর Deposit এর সাথে যোগ করা.
+    const totalDeposit = depositAddNumber + userDepositNumber;
+    depositAdd.innerText = totalDeposit;
 
+    //step-6:ব্যাংক এর টোটাল ব্যালান্স কে ধরা তারপর স্ট্রিং থেকে নম্বর এ কনভার্ট করা..
+    const balanceAdd = document.getElementById('balanceAdd');
+    const balanceAddstring = balanceAdd.innerText;
+    const balanceAddNumbar = parseFloat(balanceAddstring)
+
+    //step-7:ইউসার এর ইনপুট কে ব্যাংক এর টোটাল ব্যালান্স এর সাথে যোগ করা.
+    const balanceDepositAdd = userDepositNumber + balanceAddNumbar;
+    balanceAdd.innerText = balanceDepositAdd;
+
+})
+
+// ------------------------------------ Withdraw korar code ---------------------------------//
+
+// step-1: প্রথমে Deposit এর বাটন কে ধরা...
+document.getElementById('Withdraw-btn').addEventListener('click', function () {
+    // step-2: Deposit এর ইনপুট ফিল্ড কে ধরা..
+    const userWithdraw = document.getElementById('user-Withdraw');
+    const userWithdrawString = userWithdraw.value;
+    // step-3: Deposit এর ইনপুট স্ট্রিং কে নম্বর এ কনভার্ট করা.
+    const userWithdrawNumber = parseFloat(userWithdrawString)
+    userWithdraw.value = "";
+    if(isNaN(userWithdrawNumber)){
+        alert('Number বা সংখ্যা ছাড়া কোনো কিছু Allow না। Please provide a valid Number')
+        return;
+    }
+    // step-4: ব্যাংক এর Deposit কে ধরা তারপর তাকে স্ট্রিং থেকে নম্বর এ কনভার্ট করা.
+    const withdrawAdd = document.getElementById('withdrawAdd');
+    const withdrawAddString = withdrawAdd.innerText;
+    const withdrawAddNumaber = parseFloat(withdrawAddString);
+    //step-6:ব্যাংক এর টোটাল ব্যালান্স কে ধরা তারপর স্ট্রিং থেকে নম্বর এ কনভার্ট করা..
+    const balanceAdd = document.getElementById('balanceAdd');
+    const balanceAddstring = balanceAdd.innerText;
+    const balanceAddNumbar = parseFloat(balanceAddstring)
+    // step-8: ইনপুটকৃত টাকা যদি ব্যাংক এর total টাকার বেশি হয় , তাহলে তাকে সতর্ক করা। 
+    if (userWithdrawNumber > balanceAddNumbar) {
+        alert('তোমার বাপের একাউন্ট এ এতো টাকা নাই। বাবা কে বলো টাকা deposit করতে। ')
+        return;
+    }
+    // step-5:ইউসার এর দেয়া ইনপুট কে ব্যাংক এর Deposit এর সাথে যোগ করা
+    const totalWithdraw = userWithdrawNumber + withdrawAddNumaber;
+    withdrawAdd.innerText = totalWithdraw;
+
+    //step-7:ইউসার এর ইনপুট কে ব্যাংক এর টোটাল ব্যালান্স এর সাথে বিয়োগ করা.
+    const balanceWithdrawAdd = balanceAddNumbar - userWithdrawNumber;
+    balanceAdd.innerText = balanceWithdrawAdd;
 })

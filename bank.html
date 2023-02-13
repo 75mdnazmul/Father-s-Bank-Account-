@@ -15,32 +15,39 @@
                 class="font-bold text-violet-600">Moooooooney</span><span class="text-red-500"> !!!</span></h1>
     </header>
     <main class="bg-green-200 my-7">
-        <section class="w-4/5 mx-auto ">
-            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4 py-10">
+        <section class=" w-4/5 mx-auto ">
+            <div class="grid grid-cols-3 gap-4 py-10">
+                <!-- user er (doposit) korar poriman -->
                 <div class="p-12 bg-green-600 rounded-3xl">
                     <h4 class="text-4xl font-bold text-white mb-2">Deposit</h4>
                     <h2 class="text-6xl text-white font-semibold">$<span id="depositAdd">00</span></h2>
                 </div>
+                <!-- user er (withdraw) er poriman -->
                 <div class="p-12 bg-pink-400 rounded-3xl">
                     <h4 class="text-4xl font-bold text-white mb-2">Withdraw</h4>
                     <h2 class="text-6xl text-white font-semibold">$<span id="withdrawAdd">00</span></h2>
                 </div>
+                <!-- Bank er total (Balance) -->
                 <div class="p-12 bg-orange-500 rounded-3xl">
                     <h4 class="text-4xl font-bold text-white mb-2">Balance</h4>
                     <h2 class="text-6xl text-white font-semibold">$<span id="balanceAdd">1240</span></h2>
                 </div>
             </div>
         </section>
-        <section class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 pb-10 w-4/5 mx-auto">
+        <section class="grid grid-cols-2 gap-5 pb-10 w-4/5 mx-auto">
             <div class="bg-blue-400 py-5 px-9 rounded-3xl">
                 <h3 class="text-4xl font-semibold text-white pb-5 pl-3"><label for="user-Deposit"> Please Deposit</label></h3>
+                <!-- user er deposit taka add korar (input field) -->
                 <input id="user-Deposit" class="w-3/4 text-xl block mx-auto py-2 rounded-lg px-5" type="number" placeholder="$ amount you want to deposit">
+                <!-- user er deposit take add korar (button) -->
                 <input type="submit" id="Deposit-btn"
                     class="py-2 px-10 bg-indigo-800 font-semibold text-white text-lg ml-14 my-5 rounded-lg transition ease-out delay-350 hover:scale-110 hover:bg-yellow-500 duration-100 cursor-pointer active:bg-lime-600 active:text-white active:border-solid active:border-2 active:border-white border-transparent border-2" value="Deposit">
             </div>
             <div class="bg-red-400 py-5 px-9 rounded-3xl">
                 <h3 class="text-4xl font-semibold text-white pb-5 pl-3"><label for="user-Withdraw">Please Withdraw</label></h3>
+                <!-- user er Withdraw taka grohon korar (input field) -->
                 <input id="user-Withdraw" class="w-3/4 text-xl block mx-auto py-2 rounded-lg px-5" type="number" placeholder="$ amount you want to Withdraw">
+                <!-- user er Withdraw take grohon korar (button) -->
                 <input type="submit" id="Withdraw-btn"
                     class="py-2 px-10 bg-indigo-800 font-semibold text-white text-lg ml-14 my-5 rounded-lg transition ease-out delay-350 hover:scale-110 hover:bg-yellow-500 duration-100 cursor-pointer active:bg-lime-600 active:text-white active:border-solid active:border-2 active:border-white border-transparent border-2" value="Withdraw">
             </div>
